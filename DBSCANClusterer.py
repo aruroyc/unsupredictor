@@ -44,7 +44,6 @@ class DBSCANClusterer():
 
     def cluster_and_save(self,outputFile):
         Y,n_clusters_ = self.cluster()
-        print(self.getOutputHeaders())
-        np.savetxt(outputFile,Y,delimiter=',',fmt='%.3e',header=','.join(self.getOutputHeaders()))
+        np.savetxt(outputFile,Y,delimiter=',',fmt='%.3e',header=','.join(self.getOutputHeaders()),comments='')
 
 

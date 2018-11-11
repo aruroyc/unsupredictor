@@ -11,11 +11,19 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-
+Training on a unsupervised dataset
 ```python
 from unsupredictor import *
 
 predictor = UnsupervisedLearnPredictor(<input_raw_file_path>)
+predictor.predict(data)
+```
+Running inference
+```python
+from unsupredictor import *
+
+predictor = UnsupervisedLearnPredictor(None)
+predictor.load_precomputed_classifier(<model_path>)
 predictor.predict(data)
 ```
 ## Contributing

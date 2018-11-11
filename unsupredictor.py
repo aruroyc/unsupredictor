@@ -7,12 +7,11 @@ class UnsupervisedLearnPredictor():
         self.clusterer = DBSCANClusterer(inputfile,minPts,eps,target_header)
         self.input_file = inputfile
         self.cluster_file = self.get_cluster_file_name()
-
         self.classifier = TrainClassifier(self.get_cluster_file_name(),self.getInputHeaders(),target_header,train_test_split)
 
 
     def getInputHeaders(self):
-        data = pd.read_csv(self.input_file).columns
+        data = pd.read_csv(self.cluster_file).columns
         return data
 
     def get_cluster_file_name(self):
@@ -28,6 +27,9 @@ class UnsupervisedLearnPredictor():
     def learn_classes_and_save_model(self):
         self._compute_classes_and_save()
         self._train_classifier_and_save()
-if __name__ == '__main__':
-    trainer = UnsupervisedLearnPredictor(sys.argv[1],minPts=500,eps=50)
-    trainer.learn_classes_and_save_model()
+
+    def predict(self,data):
+        return self.classifier.predict(data)
+
+    def load_precomputed_classifier(self,file_path):
+        self.classifier.load_model(file_path)
