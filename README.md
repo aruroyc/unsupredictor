@@ -16,6 +16,7 @@ pip install -r requirements.txt
 from unsupredictor import *
 
 predictor = UnsupervisedLearnPredictor(<input_raw_file_path>)
+predictor.learn_classes_and_save_model()
 predictor.predict(data)
 ```
 ## Contributing
