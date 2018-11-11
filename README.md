@@ -1,7 +1,7 @@
 ## Unsupervised Classification (unsupredictor)
 
 unsupredictor is a library that allows to quickly cluster a given set of datapoints and generate a random forest classifier on the results to easily classify new incoming datapoints.
-![](https://cdn-images-1.medium.com/max/640/1*tc8UF-h0nQqUfLC8-0uInQ.gif)
+![](cluster.gif)
 ## Installation
 
 prerequisites:
